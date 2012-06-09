@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.22, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.1.61, for debian-linux-gnu (i486)
 --
 -- Host: localhost    Database: subscription
 -- ------------------------------------------------------
--- Server version	5.5.22-0ubuntu1
+-- Server version	5.1.61-0+squeeze1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -294,7 +294,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'gogu gfd','/uploads/1.jpg','gigi@gigi.com','test','12346','askjh','Azerbaijan','Cabrayil Rayonu','1995-12-24','Do not dis','aaa','2012-05-04 11:48:28','admin',0),(2,'gogu1 gfd2','/uploads/2.jpg','gigis@gigis.com','test','12346','askjh','Afghanistan','Syunik\'','1994-09-13','Do not dis','qqq','2012-05-04 11:48:28','user',0),(3,'gg','dsgf','','','','','American Samoa','Rose Island','1995-12-24','male','213456',NULL,'user',0),(5,NULL,NULL,'mihai.marca@yahoo.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,'user',0),(6,NULL,NULL,'mihai_mar_k@yahoo.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'aaaa',NULL,'user',0),(7,NULL,NULL,'mihai.marca@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,'user',0),(8,NULL,NULL,'mihai.marca@evozon.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,'user',0),(9,'Raul Matei','','raul.matei@evozon.com','str. Orizont, Nr. 3','0771026303','Dej','Romania',NULL,'1982-04-26','Male','popopo',NULL,'user',1),(10,'sdfsdf','/uploads/10.jpg','sdfdzsf@asddas.com','','','','Afghanistan',NULL,'2012-05-17','Do not dis','sdfdsfds',NULL,'user',0),(11,'dfgdfgdfg','/uploads/11.jpg','gigi@gigi.comdgfdsg','','','','Afghanistan',NULL,'2012-05-02','Do not dis','dfgdfgdf',NULL,'user',0),(12,NULL,NULL,'alexandru.strajeriu@evozon.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,'user',0),(13,NULL,NULL,'test@test.test',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,'user',0),(14,'fdsg5553eg564 r','/uploads/14.jpg','test.test@test.com','','','','Afghanistan',NULL,'2012-06-07','Male','freebird',NULL,'user',0);
+INSERT INTO `users` VALUES (1,'gogu gfd','/uploads/1.jpg','gigi@gigi.com','test','12346','askjh','Azerbaijan','Cabrayil Rayonu','1995-12-24','Do not dis','aaa','2012-05-04 11:48:28','admin',1),(2,'gogu1 gfd2','/uploads/2.jpg','gigis@gigis.com','test','12346','askjh','Afghanistan','Syunik\'','1994-09-13','Do not dis','qqq','2012-05-04 11:48:28','user',1),(3,'gg','dsgf','','','','','American Samoa','Rose Island','1995-12-24','male','213456',NULL,'user',1),(5,NULL,NULL,'mihai.marca@yahoo.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,'user',1),(6,NULL,NULL,'mihai_mar_k@yahoo.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'aaaa',NULL,'user',1),(7,NULL,NULL,'mihai.marca@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,'user',1),(8,NULL,NULL,'mihai.marca@evozon.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,'user',1),(9,'Raul Matei','','raul.matei@evozon.com','str. Orizont, Nr. 3','0771026303','Dej','Romania',NULL,'1982-04-26','Male','popopo',NULL,'user',1),(10,'sdfsdf','/uploads/10.jpg','sdfdzsf@asddas.com','','','','Afghanistan',NULL,'2012-05-17','Do not dis','sdfdsfds',NULL,'user',1),(11,'dfgdfgdfg','/uploads/11.jpg','gigi@gigi.comdgfdsg','','','','Afghanistan',NULL,'2012-05-02','Do not dis','dfgdfgdf',NULL,'user',1),(12,NULL,NULL,'alexandru.strajeriu@evozon.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,'user',1),(13,NULL,NULL,'test@test.test',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,'user',1),(14,'fdsg5553eg564 r','/uploads/14.jpg','test.test@test.com','','','','Afghanistan',NULL,'2012-06-07','Male','freebird',NULL,'user',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -307,4 +307,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-06-08 14:15:20
+-- Dump completed on 2012-06-09  5:45:26
