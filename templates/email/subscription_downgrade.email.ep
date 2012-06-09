@@ -1,0 +1,7 @@
+% layout 'email/default';
+% title 'Product Subscription Downgrade';
+
+    <p>
+        Hello <%= $user->{name} %>, you have downgraded to <%= $user->{product} %> successfully.<br>
+        Your subscription for the new product will end at <%= $user->{end_date} %>.
+    </p>

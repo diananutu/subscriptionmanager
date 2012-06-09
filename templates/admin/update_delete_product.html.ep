@@ -1,0 +1,168 @@
+% layout 'admin/default';
+% title 'update product';
+<script language="javascript"> 
+function toggle() {
+	var ele = document.getElementById("toggleText");
+	var text = document.getElementById("displayText");
+	if(ele.style.display == "block") {
+    		ele.style.display = "none";
+		
+  	}
+	else {
+		ele.style.display = "block";
+	}
+} 
+</script>
+<script type="text/javascript">
+    function ddldis()
+    {
+    document.getElementById('ddl').disabled=true;
+    }
+</script>
+% if ($product !=0 && !$product->{name} ) {
+<div class="control-group">
+    %= form_for 'update_delete_product',class=>'well', method => 'post' => begin
+        <label class="control-label">Product name:</label> <input type="text" name="name" value="<%= $product->name %>" >
+        <label class="control-label">Description:</label>
+        <textarea rows="2" cols="20" name="details" value="<%= $product->details%>"></textarea>
+        <label class="control-label">Period:</label> <input type="text" name="no_periods" value="<%= $product->no_periods %>" >
+        <label class="control-label">Period type:</label>
+        <select name="period_type">
+            <option>Day</option>
+            <option>Week</option>
+            <option>Month</option>
+            <option>Quarter</option>
+            <option>Year</option>
+        </select>
+        <input id="displayText" type="checkbox" name="is_trial" onClick="javascript:toggle();"> Has trial<br>
+        </br>
+        <ul>
+            <div id="toggleText" style="display: none">
+                <label class="control-label">Number of periods:</label>
+                %= text_field 'trial_period'
+                <label class="control-label">Period type:</label>
+                <select name="trial_period_type">
+                    <option>Day</option>
+                    <option>Week</option>
+                    <option>Month</option>
+                    <option>Quarter</option>
+                    <option>Year</option>
+                  </select>
+                <br>
+                <input  type="checkbox" name="requires_card" > Requires Card
+            </div>
+        </ul>
+        <label class="control-label">Price:</label> <input type="text" name="subscription_cost" value="<%= $product->subscription_cost %>" ></br>
+        <label class="control-label">Currency:</label>
+        <select name="currency">
+            <option>USD</option>
+            <option>EUR</option>
+            <option>GBP</option>
+          </select>
+        <label class="control-label">Maximum users:</label>
+        <input type="text" name="additional_users" id="add_usr" ><input  type="checkbox" onChange="$('#add_usr').attr('readonly', this.checked)" > Unlimited
+        </br>
+        <label class="control-label">Upgrades to:</label>
+        <select name="upgrade" size="<%= $size %>" multiple="multiple">
+            %while( my $prod = $products->next ) {
+                <option value="<%= $prod->pid %>"> <%= $prod->name %> </option>
+            
+            %}
+        </select>
+        % $products->reset;
+        <label class="control-label">Downgrades to:</label>
+        <select name="downgrade" size="<%= $size %>" multiple="multiple">
+            %while( my $prod = $products->next ) {
+                <option value="<%= $prod->pid %>"> <%= $prod->name %> </option>
+            
+            %}
+        </select>
+        <label class="control-label">Has features:</label>
+        <select name="features" size="<%= $fsize %>" multiple="multiple">
+            %while( my $feat = $features->next ) {
+                <option value="<%= $feat->fid %>"> <%= $feat->feature_name %> </option>
+            
+            %}
+        </select>
+        </br>
+        <button class="btn btn-primary" type="submit" value="<%= $product->pid %>" name="pid">Update product</button>
+    %end
+</div>
+%}
+%else{
+    %= form_for 'update_delete_product',class=>'well', => begin
+        <label class="control-label">Product name:</label>
+        %= text_field 'name'
+        <label class="control-label">Description:</label>
+        <textarea rows="2" cols="20" name="details"></textarea>
+        <label class="control-label">Number of periods:</label>
+        %= text_field 'no_periods'
+        <label class="control-label">Period type:</label>
+        <select name="period_type">
+            <option>Day</option>
+            <option>Week</option>
+            <option>Month</option>
+            <option>Quarter</option>
+            <option>Year</option>
+          </select>
+        <br>
+        <input id="displayText" type="checkbox" name="is_trial" onClick="javascript:toggle();"> Has trial<br>
+        </br>
+        <ul>
+            <div id="toggleText" style="display: none">
+                <label class="control-label">Number of periods:</label>
+                %= text_field 'trial_period'
+                <label class="control-label">Period type:</label>
+                <select name="trial_period_type">
+                    <option>Day</option>
+                    <option>Week</option>
+                    <option>Month</option>
+                    <option>Quarter</option>
+                    <option>Year</option>
+                  </select>
+                <br>
+                <input  type="checkbox" name="requires_card" > Requires Card
+            </div>
+        </ul>
+        <label class="control-label">Subscription Cost:</label>
+        %= text_field 'subscription_cost'
+        </br>
+        <label class="control-label">Currency:</label>
+        <select name="currency">
+            <option>USD</option>
+            <option>EUR</option>
+            <option>GBP</option>
+          </select>
+        <label class="control-label">Maximum users:</label>
+        <input type="text" name="additional_users" id="add_usr" ><input  type="checkbox" onChange="$('#add_usr').attr('readonly', this.checked)" > Unlimited
+        </br>
+        <label class="control-label">Upgrades to:</label>
+        <select name="upgrade" size="<%= $size %>" multiple="multiple">
+            %while( my $prod = $products->next ) {
+                <option value="<%= $prod->pid %>"> <%= $prod->name %> </option>
+            
+            %}
+        </select>
+        % $products->reset;
+        <label class="control-label">Downgrades to:</label>
+        <select name="downgrade" size="<%= $size %>" multiple="multiple">
+            %while( my $prod = $products->next ) {
+                <option value="<%= $prod->pid %>"> <%= $prod->name %> </option>
+            
+            %}
+        </select>
+        <label class="control-label">Has features:</label>
+        <select name="features" size="<%= $fsize %>" multiple="multiple">
+            %while( my $feat = $features->next ) {
+                <option value="<%= $feat->fid %>"> <%= $feat->feature_name %> </option>
+            
+            %}
+        </select>
+        </br>
+       <button class="btn btn-primary" type="submit" >Add product</button>  
+    %end
+    
+%}
+%= form_for 'product_management' => begin
+    <button class="btn btn-primary" type="submit">Cancel</button>
+%end

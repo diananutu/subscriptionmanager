@@ -1,0 +1,19 @@
+% layout 'admin/default';
+% title 'Edit signup';
+
+
+  %= form_for 'edit_signup', method => 'post' => begin
+  <div class="span4">
+    <div class="box">
+      <h4 class="box-header">Signup Form</h4>
+      <div class="box-container">
+        %for (my $column = 1; $column< @$columns-1; $column ++ ) {
+          <label class="checkbox">
+            <input type="checkbox" name="column" value="<%= @$columns[$column] %>" /> <%= @$columns[$column] %><br>
+          </label>
+        %}
+        <button class="btn btn-primary" type="submit" >Edit signup</button>
+      </div>
+    </div>
+  </div>
+  %end

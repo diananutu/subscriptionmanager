@@ -1,0 +1,22 @@
+% layout 'email/default';
+% title 'Product Subscription';
+
+    <p>Hello <%= $user->{name} %>, you have subscribed successfully:</p>
+    <table border="0" cellpadding="10" cellspacing="2">
+        <tr>
+            <td bgcolor="#CCCCCC">Subscription Name</td>
+            <td bgcolor="#F0F0F0">Some subscription name</td>
+        </tr>
+        <tr>
+            <td bgcolor="#CCCCCC">Subscription Type</td>
+            <td bgcolor="#F0F0F0">Some subscription type</td>
+        </tr>
+        <tr>
+            <td bgcolor="#CCCCCC">Start / End Date</td>
+            <td bgcolor="#F0F0F0">0000-00-00 / 0000-00-00</td>
+        </tr>
+        <tr>
+            <td bgcolor="#CCCCCC">Description</td>
+            <td bgcolor="#F0F0F0">Some short description</td>
+        </tr>
+    </table>

@@ -1,0 +1,148 @@
+%layout 'admin/default';
+% title 'User Details';
+% my @date;
+    <div class="row-fluid">
+          <div class="box">
+            <h4 class="box-header">User info</h4>
+            <div class="box-container">
+              <div class="control-group">
+              %= form_for 'user_details', class=>'well', method => 'post' => begin
+                <fieldset>
+                  <div class="span3">
+                    <div class="control-group"><h4>Profile picture:</h4></div>
+                    %my $image_path = undef;
+                    %if ($self->session->{user}->photo) {
+                      %$image_path =   $self->session->{user}->photo;
+                      %  unless (-e $self->app->home."/public".$image_path) {$image_path = undef;}
+                    %}
+                    <img src="<%= $image_path ? $image_path : '/assets/img/unknown-user.gif' %>" alt="Profile picture">
+                    <div class="control-group"><h4>Login Info:</h4></div>
+                    <div class="control-group">
+                      <label class="control-label">Email:</label>
+                      <div class="controls"><input type="text" name="email" value="<%= $user->email %>"readonly="readonly"></div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Password:</label>
+                      <div class="controls"><input type="password" name="password" value="<%= $user->password %>" readonly="readonly"></div>
+                    </div>
+                  </div>
+                  <div class="span3">
+                    <div class="control-group"><h4>Personal Info:</h4></div>
+                    % @date = split(/-/, $user->birthday);
+                    <div class="control-group">
+                      <label class="control-label">Name:</label>
+                      <div class="controls"><input type="text" name="fname" value="<%= $user->name %>" readonly="readonly"></div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Photo:</label>
+                      <div class="controls"><input type="text" name="nickname" value="<%= $user->photo %>" readonly="readonly"></div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Birthday:</label>
+                      <div class="controls"><input type="text" name="birthday" value="<%= $date[1] %>/<%= $date[2] %>/<%= $date[0] %>" readonly="readonly"></div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Gender:</label>
+                      <div class="controls"><input type="text" name="gender" value="<%= $user->gender %>" readonly="readonly"></div>
+                    </div>
+                  </div>
+                  <div class="span3">
+                    <div class="control-group"><h4>Contact Info:</h4></div>
+                    <div class="control-group">
+                      <label class="control-label">Address:</label>
+                      <div class="controls"><input type="text" name="address" value="<%= $user->address %>" readonly="readonly"></div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Phone:</label>
+                      <div class="controls"><input type="text" name="phone" value="<%= $user->phone %>" readonly="readonly"></div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">City:</label>
+                      <div class="controls"><input type="text" name="city" value="<%= $user->city %>" readonly="readonly"></div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Country:</label>
+                      <div class="controls"><input type="text" name="country" value="<%= $user->country %>" readonly="readonly"></div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">State:</label>
+                      <div class="controls"><input type="text" name="county" value="<%= $user->county %>" readonly="readonly"></div>
+                    </div>
+                  </div>
+                  <div class="span3">
+                    % if ( defined $subscription ) {
+                    <div class="control-group"><h4>Billing Info:</h4></div>
+                    % my @date2 = split(/ /, $user->signup_date);
+                    % @date = split(/-/, $date2[0]);
+                    <p>Customer since: <%= $date[1] %>/<%= $date[2] %>/<%= $date[0] %></p>
+                    % @date2 = split(/ /, $subscription->end_date);
+                    % @date = split(/-/, $date2[0]);
+                    <p>Next billing date: <%= $date[1] %>/<%= $date[2] %>/<%= $date[0] %> for $<%=$subscription->pid->subscription_cost%></p>
+                    <p>Billed amount: $<%=$total_spent%>  <a data-toggle="modal" href="#myModal">Show details</a></p>
+                    % }
+                  </div>
+                </fieldset>
+              % end
+              % if( defined $subscription ){
+                <form action="/subscription/change_subscription"  method="post">
+                    <%= hidden_field cust_uid => $user->uid %>
+                    <%= hidden_field pid => $subscription->pid->pid %>
+                    <% if( $upgrade != 0) { %>
+                        <button class="btn btn-primary" type="submit" value="upgrade" name="upgrade">Upgrade</button>
+                    <% } %>
+                    <% if( $downgrade != 0) { %>
+                        <button class="btn btn-primary" type="submit" value="downgrade" name="downgrade">Downgrade</button>
+                    <% } %>
+                    <% if( $renew ) { %>
+                        <button class="btn btn-primary" type="submit" value="renew" name="renew">Renew Early</button>
+                    <% } %>
+                </form>
+               %}
+                <% if( $active_subs != 0 ) { %>
+                <form action="/subscription/new_subscription"  method="post">
+                    <%= hidden_field cust_uid => $user->uid %>
+                    <%= submit_button 'New subscription or Reactivate', class => "btn btn-primary" %>
+                </form>
+              <% } %>
+            </div>
+          </div>
+      </div>
+    </div>
+
+%= form_for 'user_management', =>begin
+<button class="btn btn-primary" type="submit">Back</button>
+%end
+<div id="myModal" class="modal hide fade">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h3>Billing history</h3>
+    </div>
+    <div class="modal-body">
+        <table class="table table-bordered" border="1" >
+            <tr>
+                <td>Invoice #</td>
+                <td>Date</td>
+                <td>Subscription</td>
+                <td>Subscription period</td>
+                <td>Value</td>
+            </tr>
+            % while ( my $invoice = $all_invoices->next ) {
+                <tr>
+                    <td><%= $invoice->sid %></td>
+                    % my @date2 = split(/ /, $invoice->start_date);
+                    % @date = split(/-/, $date2[0]);
+                    <td><%= $date[1] %>/<%= $date[2] %>/<%= $date[0] %></td>
+                    <td><%= $invoice->pid->name %></td>
+                    % my @date3 = split(/ /, $invoice->end_date);
+                    % my @date4 = split(/-/, $date2[0]);
+                    <td><%= $date[1] %>/<%= $date[2] %>/<%= $date[0] %> - <%= $date4[1] %>/<%= $date4[2] %>/<%= $date4[0] %></td>
+                    <td><%= $invoice->pid->subscription_cost %></td>
+                </tr>
+            %}
+        </table>
+    </div>
+    
+    <div class="modal-footer">
+      <a href="#" class="btn" data-dismiss="modal" >Close</a>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+.carousel-control {
+  border-radius: 5px;
+  border-color: #222222;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.carousel-content {
+  position: relative;
+  float: left;
+  width: 200px;
+  height: 300px;
+  padding: 0 0 0 100px;
+}
+
+.carousel .carousel-content img {
+  margin: 0 auto;
+}
+
+.carousel .carousel-content .btn {
+  margin: 10px 0;
+}
+
+.modal {
+  border: 0 none;
+  background: #ecf2f6;
+  background: -moz-linear-gradient(top,  #ecf2f6 0%, #d7dde0 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ecf2f6), color-stop(100%,#d7dde0));
+  background: -webkit-linear-gradient(top,  #ecf2f6 0%,#d7dde0 100%);
+  background: -o-linear-gradient(top,  #ecf2f6 0%,#d7dde0 100%);
+  background: -ms-linear-gradient(top,  #ecf2f6 0%,#d7dde0 100%);
+  background: linear-gradient(top,  #ecf2f6 0%,#d7dde0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecf2f6', endColorstr='#d7dde0',GradientType=0 );
+}
+
+.modal-header {
+  background: transparent;
+  border: 0 none;
+}
+
+.modal-body {
+  background: transparent;
+  border: 0 none;
+}
+
+.modal-footer {
+  background: transparent;
+  border: 0 none;
+  box-shadow: 0 0 0 #ecf2f6 inset;
+  text-align: center;
+}
+
+.modal-footer .modal-close {
+  margin: 0 10px;
+}
+
+a.accordion-toggle {
+  text-decoration: none;
+  outline: none;
+}
+
+a.accordion-toggle:hover {
+  text-decoration: none;
+}
+
+.thumbnail {
+  background: #ffffff;
+}
+
+.thumbnail.caption {
+  padding: 10px;
+}
+
+.thumbnail .caption img {
+  display: inline-block;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.thumbnail.caption .caption-text {
+  float: left;
+}
+
+.tabbable p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+b.icon {
+  background: transparent url('http://placehold.it/72x72') no-repeat center;
+  display: block;
+  float: left;
+  height: 72px;
+  width: 72px;
+  margin: 45px 20px 45px 0;
+}

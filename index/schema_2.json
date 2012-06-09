@@ -1,0 +1,68 @@
+{
+  "_class": "Lucy::Plan::Schema",
+  "analyzers": [
+    null,
+    {
+      "_class": "Lucy::Analysis::PolyAnalyzer",
+      "analyzers": [
+        {
+          "_class": "Lucy::Analysis::CaseFolder"
+        },
+        {
+          "_class": "Lucy::Analysis::RegexTokenizer",
+          "pattern": "\\w+(?:['\\x{2019}]\\w+)*"
+        },
+        {
+          "_class": "Lucy::Analysis::SnowballStemmer",
+          "language": "en"
+        }
+      ]
+    }
+  ],
+  "fields": {
+    "active": {
+      "analyzer": "1",
+      "type": "fulltext"
+    },
+    "country": {
+      "analyzer": "1",
+      "type": "fulltext"
+    },
+    "county": {
+      "analyzer": "1",
+      "type": "fulltext"
+    },
+    "email": {
+      "analyzer": "1",
+      "type": "fulltext"
+    },
+    "end_date": {
+      "analyzer": "1",
+      "type": "fulltext"
+    },
+    "name": {
+      "analyzer": "1",
+      "type": "fulltext"
+    },
+    "prod_name": {
+      "analyzer": "1",
+      "type": "fulltext"
+    },
+    "renew": {
+      "analyzer": "1",
+      "type": "fulltext"
+    },
+    "signup_date": {
+      "analyzer": "1",
+      "type": "fulltext"
+    },
+    "start_date": {
+      "analyzer": "1",
+      "type": "fulltext"
+    },
+    "uid": {
+      "analyzer": "1",
+      "type": "fulltext"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+---
+max_value: 3
+styles_data:
+  1:
+    img: '/assets/img/cssdefault.png'
+    text: bootstrap
+    value: '/assets/css/bootstrap.css'
+  2:
+    img: '/assets/img/cssdefault.png'
+    text: bs2
+    value: '/assets/css/bs2.css'
+  3:
+    img: '/assets/img/cssdefault.png'
+    text: subscription1
+    value: '/assets/css/subscription1.css'
+

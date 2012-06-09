@@ -1,0 +1,11 @@
+% layout 'public/default';
+% title 'About';
+
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <p>Graeci audire nec ut, et pro quidam suscipiantur, mea ut feugait offendit vituperata. Eum id esse placerat dissentiet! At ubique epicurei pro. Decore urbanitas voluptaria an sea, id has aliquip urbanitas! Illud probatus vel no, cu saperet delenit inimicus quo.</p>
+        <p>His in justo dicant fastidii, ferri utroque intellegam ea pri? Adhuc officiis te qui, an eum erat augue consulatu? Per eu fabellas menandri definitiones, alienum maluisset complectitur pro an. Cu per possit habemus, eam assentior definitionem no? Ad vel iriure viderer, elitr vocent convenire sed no, minim malorum persecuti ut mea</p>
+      </div>
+    </div>
+  </div>

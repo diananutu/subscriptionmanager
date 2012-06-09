@@ -1,0 +1,47 @@
+% content_for 'success_messages' => begin
+% if ( defined($self->session->{success_messages}) && ( scalar @{ $self->session->{success_messages} } > 0 ) ) {
+  <div class="row-fluid">
+    <div class="span12">
+    % foreach my $notice ( @{ $self->session->{success_messages}} ) {
+      <div class="alert alert-success">
+        <a class="close" data-dismiss="alert">×</a>
+        <%= $notice; %>
+      </div>
+    % }
+    </div>
+  </div>
+  % delete $self->session->{success_messages};
+% }
+% end
+% content_for 'noticed_messages' => begin
+% if ( defined($self->session->{notice_messages}) && ( scalar @{ $self->session->{notice_messages} } > 0 ) ) {
+  <div class="row-fluid">
+    <div class="span12">
+    % foreach my $notice ( @{ $self->session->{notice_messages}} ) {
+      <div class="alert alert-info">
+        <a class="close" data-dismiss="alert">×</a>
+        <%= $notice; %>
+      </div>
+    % }
+    </div>
+  </div>
+  % delete $self->session->{notice_messages};
+% } 
+% end
+% content_for 'error_messages' => begin
+% if ( defined($self->session->{error_messages}) && ( scalar @{ $self->session->{error_messages} } > 0 ) ) {
+  <div class="row-fluid">
+    <div class="span12">
+      <div id="error-messages" class="error-messages">
+      % foreach my $error ( @{ $self->session->{error_messages} } ) {
+        <div class="alert alert-error">
+          <a class="close" data-dismiss="alert">×</a>
+          <%= $error; %>
+        </div>
+      % }
+      </div>
+    </div>
+  </div>
+  % delete $self->session->{error_messages};
+% }
+% end

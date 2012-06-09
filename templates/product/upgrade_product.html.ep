@@ -1,0 +1,27 @@
+% layout 'admin/default';
+% title 'User product';
+
+<div class="page-header"><h3>Upgrade product</h3></div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Period</th>
+        </tr> 
+    </thead>
+    <tbody>
+<%= form_for "product_upgrade" => (method => "post") => begin %>
+%   while (my $prd = $product->next) {
+        <tr>
+            <td><%= $prd->name %></td>
+            <td><%= $prd->price %></td>
+            <td><%= $prd->period %></td>
+            <td><%= radio_button pid => $prd->pid %></td>
+        </tr>
+%  }
+    </tbody>
+</table>
+    <%= hidden_field cust_uid => $cust_uid %>   
+<%= submit_button 'Subscribe', class => "btn btn-primary" %>
+<% end %>

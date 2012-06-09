@@ -1,0 +1,74 @@
+% layout 'public/default';
+% title 'Pricing';
+
+  <div class="container">
+    <div class="row">
+      % foreach my $product_pid (sort keys %{$valid_products}) {
+      %if ($valid_products->{$product_pid}->{is_featured}) {
+      <div class="span3">
+        <div class="well product">
+          <div class="product-name"><h3><%= $valid_products->{$product_pid}->{product_name} %></h3></div>
+          <ul class="unstyled features animated fadeIn">
+            % my $all_features = $valid_products->{$product_pid}->{features};
+            % foreach my $product_feature (sort keys %{$all_features}) {
+            <li><%= $all_features->{$product_feature} %></li>
+            % }
+          </ul>
+            % if ($valid_products->{$product_pid}->{subscription_cost}) {
+            <h2><%= $self->app->{config}->{currency}->{ $valid_products->{$product_pid}->{currency} } . $valid_products->{$product_pid}->{subscription_cost}  %></h2>
+            <h4><%= $valid_products->{$product_pid}->{no_periods} . " " .
+                    $valid_products->{$product_pid}->{period_type} %></h4>
+            % } else {
+            <h3>Free</h3>
+            % }
+            % if ($self->{user}) {
+            %= form_for "/subscriptions/billing" => (method => "post") => begin
+              %= hidden_field pid => $product_pid
+              %= hidden_field subscription_action => 'subscribe'
+              % if ($valid_products->{$product_pid}->{subscription_cost}) {
+                %= submit_button "Subscribe", class => "btn btn-large btn-success"
+              % } else {
+                %= submit_button "Start now. It's free", class => "btn btn-large btn-success"
+              % }
+            % end
+            % } else {
+            %= form_for "signup_step1" => (method => "post") => begin
+              %= hidden_field pid => $product_pid
+              %= hidden_field subscription_action => 'subscribe'
+              % if ($valid_products->{$product_pid}->{subscription_cost}) {
+                %= submit_button "Subscribe", class => "btn btn-large btn-success"
+              % } else {
+                %= submit_button "Start now. It's free", class => "btn btn-large btn-success"
+              % }
+            % end
+            % }
+        </div>
+      </div>
+      % }
+      % }
+    </div>
+    <div class="row">
+      <div class="span6">
+        <b class="icon"></b>
+        <h2>Graeci audire</h2>
+        <p>Graeci audire nec ut, et pro quidam suscipiantur, mea ut feugait offendit vituperata. Eum id esse placerat dissentiet! At ubique epicurei pro. Decore urbanitas voluptaria an sea, id has aliquip urbanitas! Illud probatus vel no, cu saperet delenit inimicus quo.</p>
+      </div>
+      <div class="span6">
+        <b class="icon"></b>
+        <h2>Intellegam</h2>
+        <p>His in justo dicant fastidii, ferri utroque intellegam ea pri? Adhuc officiis te qui, an eum erat augue consulatu? Per eu fabellas menandri definitiones, alienum maluisset complectitur pro an. Cu per possit habemus, eam assentior definitionem no? Ad vel iriure viderer, elitr vocent convenire sed no, minim malorum persecuti ut mea</p>
+      </div>
+    </div>
+    <div class="row">
+       <div class="span6">
+        <b class="icon"></b>
+        <h2>Intellegam</h2>
+        <p>His in justo dicant fastidii, ferri utroque intellegam ea pri? Adhuc officiis te qui, an eum erat augue consulatu? Per eu fabellas menandri definitiones, alienum maluisset complectitur pro an. Cu per possit habemus, eam assentior definitionem no? Ad vel iriure viderer, elitr vocent convenire sed no, minim malorum persecuti ut mea</p>
+      </div>
+      <div class="span6">
+        <b class="icon"></b>
+        <h2>Graeci audire</h2>
+        <p>Graeci audire nec ut, et pro quidam suscipiantur, mea ut feugait offendit vituperata. Eum id esse placerat dissentiet! At ubique epicurei pro. Decore urbanitas voluptaria an sea, id has aliquip urbanitas! Illud probatus vel no, cu saperet delenit inimicus quo.</p>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,57 @@
+% layout 'admin/default';
+% title 'User product';
+
+<div class="page-header"><h3>User products</h3></div>
+%if($has_subscription){
+
+    You are subscibed to following product:   
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Period</th>
+            </tr> 
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= $product->name %></td>
+                <td><%= $product->price %></td>
+                <td><%= $product->period %></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <%= form_for "product_change" => (method => "post") => begin %>
+        <%= hidden_field pid => $product->pid %>
+        <%= submit_button 'Upgrade', class => "btn btn-primary" %>     
+        <%= submit_button 'Downgrade', class => "btn" %>
+    <% end %>
+    
+%} else {
+    You have no product subscriptions.<br />
+    Please choose one below:
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Period</th>
+            </tr> 
+        </thead>
+        <tbody>
+    <%= form_for "product_subscription" => (method => "post") => begin %>
+%           while (my $prd = $product->next) {
+            <tr>
+                <td><%= $prd->name %></td>
+                <td><%= $prd->price %></td>
+                <td><%= $prd->period %></td>
+                <td><%= radio_button pid => $prd->pid %></td>
+            </tr>
+%           }    
+        </tbody>
+     </table>
+    
+    <%= submit_button 'Subscribe', class => "btn btn-primary" %>
+    <% end %>
+%   }

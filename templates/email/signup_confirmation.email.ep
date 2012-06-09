@@ -1,0 +1,18 @@
+% layout 'email/default';
+% title 'Registration Confirmation';
+% my $activation_link = $base_url. "/activate?uid=".$user->{uid}.'&ue='.$activation_key;
+
+    <p>Hello <%= $user->{name} %>, thank you for your registration.</p>
+    <p>Below you can find your login information<br>
+        Username: <%= $user->{email} %><br>
+        Password: <%= $user->{password} %>
+    </p>
+    <p>Please click the link below to confirm your registration:</p>
+        <a href= <%= $activation_link %>  > <%= $activation_link %> </a>
+    </p>
+    
+    
+
+    
+
+    

@@ -1,0 +1,29 @@
+% layout 'public/default';
+% title 'Welcome';
+
+  <div class="container">
+    <div class="row">
+      <div class="span8">
+        <ul class="thumbnails">
+          <li class="span2"><a href="#" class="thumbnail"><img src="assets/img/nhs.png" alt=""></a></li>
+          <li class="span2"><a href="#" class="thumbnail"><img src="assets/img/business_monitor_international.png" alt=""></a></li>
+          <li class="span2"><a href="#" class="thumbnail"><img src="assets/img/the_body_shop.png" alt=""></a></li>
+          <li class="span2"><a href="#" class="thumbnail"><img src="assets/img/microsoft_game_studios.png" alt=""></a></li>
+          <li class="span2"><a href="#" class="thumbnail"><img src="assets/img/henkel.png" alt=""></a></li>
+          <li class="span2"><a href="#" class="thumbnail"><img src="assets/img/nokia.png" alt=""></a></li>
+          <li class="span2"><a href="#" class="thumbnail"><img src="assets/img/pfizer.png" alt=""></a></li>
+          <li class="span2"><a href="#" class="thumbnail"><img src="assets/img/universal_music_group.png" alt=""></a></li>
+        </ul>
+      </div>
+      <div class="span4">
+        <div class="well">
+          <h3>Lorem Ipsum</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <h3>Dummy Text</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <h3>Specimen Book</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+      </div>
+    </div>
+  </div>

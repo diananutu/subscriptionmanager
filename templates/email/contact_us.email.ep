@@ -1,0 +1,13 @@
+% layout 'email/default';
+% title 'Contact message from: ' . $user->{name};
+
+<table width="800" height="100%" cellspacing="0" cellpadding="20" border="0">
+  <tbody>
+    <tr>
+      <td valign="top">
+        <p>You have been contacted by <b><%= $user->{name} %></b> (<%= $user->{email} %>), you can read his message below:</p>
+        <h4>Message:</h4><p><%= $user->{message} %></p>
+      </td>
+    </tr>
+  </tbody>
+</table>

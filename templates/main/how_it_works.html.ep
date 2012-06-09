@@ -1,0 +1,56 @@
+% layout 'public/default';
+% title 'How it Works';
+
+  <div class="container">
+    <div class="hero-unit">
+      <h2>Graeci audire nec ut</h2>
+      <p>Graeci audire nec ut, et pro quidam suscipiantur, mea ut feugait offendit vituperata. Eum id esse placerat dissentiet! At ubique epicurei pro. Decore urbanitas voluptaria an sea, id has aliquip urbanitas! Illud probatus vel no, cu saperet delenit inimicus quo.</p>
+      <p>His in justo dicant fastidii, ferri utroque intellegam ea pri? Adhuc officiis te qui, an eum erat augue consulatu? Per eu fabellas menandri definitiones, alienum maluisset complectitur pro an. Cu per possit habemus, eam assentior definitionem no? Ad vel iriure viderer, elitr vocent convenire sed no, minim malorum persecuti ut mea</p>
+    </div>
+    <ul class="thumbnails">
+      <li class="span6">
+        <div class="thumbnail">
+          <div class="caption">
+            <img src="http://placehold.it/141x134" alt="">
+            <div class="caption-text">
+              <h3>Accusantium</h3>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore ver itatis et quasi .</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="span6">
+        <div class="thumbnail">
+          <div class="caption">
+            <img src="http://placehold.it/141x134" alt="">
+            <div class="caption-text">
+              <h3>Laudantium</h3>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore ver itatis et quasi .</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="span6">
+        <div class="thumbnail">
+          <div class="caption">
+            <img src="http://placehold.it/141x134" alt="">
+            <div class="caption-text">
+              <h3>Eaque</h3>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore ver itatis et quasi .</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="span6">
+        <div class="thumbnail">
+          <div class="caption">
+            <img src="http://placehold.it/141x134" alt="">
+            <div class="caption-text">
+              <h3>Voluptatem</h3>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore ver itatis et quasi .</p>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>

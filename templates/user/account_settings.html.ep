@@ -1,0 +1,143 @@
+% layout 'admin/default';
+% title 'Account Settings';
+
+    <div class="row-fluid">
+      <div class="page-header">
+        <h3>Account settings</h3>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span2">
+        <div class="box">
+          <h4 class="box-header"><%= $self->session->{user}->name %></h4>
+          <div class="box-container">
+            <ul class="unstyled left-side">
+              <li>
+                %my $image_path = undef;
+                %if ($self->session->{user}->photo) {
+                  %$image_path =   $self->session->{user}->photo;
+                  %  unless (-e $self->app->home."/public".$image_path) {$image_path = undef;}
+                %}
+                <img src="<%= $image_path ? $image_path : '/assets/img/unknown-user.gif' %>" alt="Profile picture">
+                <a class="btn" data-toggle="modal" href="#change-avatar">Change profile picture</a>
+              </li>
+              <li>
+                % if ($subscription) {
+                <a class="btn" href="/user/invite">Invite user</a>
+                % }
+                <a class="btn" href="/user/edit_info">Edit profile</a>
+                <a class="btn" data-toggle="modal" href="#change-password" >Change passsword</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="span10">
+        <div class="box">
+          <h4 class="box-header">Current subscription</h4>
+          <div class="box-container">
+          % if ($subscription) {
+          %= form_for "change_subscription" => (method => "post") => begin
+          %= hidden_field pid => $subscription->pid->pid
+          %= hidden_field cust_uid =>
+          <p>You are subscribed to following product:</p>
+          <table class="table table-bordered">
+            <thead>
+              <tr><th>Name</th><th>Price</th><th>valability</th></tr> 
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= $subscription->pid->name %></td>
+                <td><%= $subscription->pid->subscription_cost %></td>
+                <td><%= $subscription->start_date %></td>
+                <td><%= $subscription->end_date %></td>
+              </tr>
+            </tbody>
+          </table>
+          % if ($future_subscriptions != 0) {
+          <p>You also have the future subscriptions:</p>
+          <table class="table table-bordered">
+            <thead>
+              <tr><th>Name</th><th>Price</th><th>Valability</th></tr> 
+            </thead>
+            <tbody>
+            % while (my $future_subscription = $future_subscriptions->next) {
+              <tr>
+                <td><%= $future_subscription->pid->name %></td>
+                <td><%= $future_subscription->pid->subscription_cost %></td>
+                <td><%= $future_subscription->start_date %></td>
+                <td><%= $future_subscription->end_date %></td>
+              </tr>
+            % }
+            </tbody>
+          </table>
+          % }
+            <input type="submit" name="upgrade" value="Upgrade" class="btn btn-inverse  ">
+            <input type="submit" name="renew" value="Renew Early" class="btn btn-inverse">
+            <input type="submit" name="downgrade" value="Downgrade" class="btn">
+          % end
+          % } else {
+          <p>You have no current subscriptions.</p>
+          %= form_for "new_subscription" => (method => "post") => begin
+            <input type="submit" name="subscribe" value="Subscribe" class="btn btn-inverse">
+            <input type="submit" name="reactivate" value="Reactivate" class="btn btn-inverse">
+          % end
+          % }
+          </div>
+        </div>
+      </div>
+    </div>
+
+%= form_for "add_picture" => (method => "post"), enctype => "multipart/form-data" => begin
+  <div class="modal hide fade" id="change-avatar">
+    <div class="modal-header">
+      <button class="close" data-dismiss="modal">×</button>
+      <h3>Change profile picture</h3>
+    </div>
+    <div class="modal-body">
+      <div class="control-group">
+        <label class="control-label">Choose image</label>
+        <div class="controls">
+            %= file_field 'avatar'
+        </div> 
+      </div>
+    </div>
+    <div class="modal-footer">
+      %= submit_button "Upload", class => "btn btn-primary"
+      %= link_to "Cancel" => "#", class => "modal-close", "data-dismiss" => "modal"
+    </div>
+  </div>
+% end
+
+%= form_for "change_password" => (method => "post") => begin
+<div class="modal hide fade" id="change-password">
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3>Change password</h3>
+  </div>
+  <div class="modal-body">
+    <div class="control-group">
+      <label class="control-label">Old password</label>
+      <div class="controls">
+          %= password_field 'old_password'
+      </div> 
+    </div>
+    <div class="control-group">
+      <label class="control-label">New password</label>
+      <div class="controls">
+          %= password_field 'new_password'
+      </div> 
+    </div>
+    <div class="control-group">
+      <label class="control-label">Repeat new password</label>
+      <div class="controls">
+          %= password_field 'repeat_new_password'
+      </div> 
+    </div>
+  </div>
+  <div class="modal-footer">
+    %= submit_button 'Change', class => "btn btn-primary"
+    %= link_to "Cancel" => "#", class => "modal-close", "data-dismiss" => "modal"
+  </div>
+</div>
+% end

@@ -1,0 +1,57 @@
+{
+  "documents": {
+    "format": "2"
+  },
+  "highlight": {
+    "format": "1"
+  },
+  "lexicon": {
+    "counts": {
+      "country": "7",
+      "county": "5",
+      "email": "10",
+      "end_date": "4",
+      "name": "9",
+      "prod_name": "1",
+      "renew": "1",
+      "signup_date": "6",
+      "start_date": "4",
+      "uid": "9"
+    },
+    "format": "3",
+    "index_counts": {
+      "country": "1",
+      "county": "1",
+      "email": "1",
+      "end_date": "1",
+      "name": "1",
+      "prod_name": "1",
+      "renew": "1",
+      "signup_date": "1",
+      "start_date": "1",
+      "uid": "1"
+    }
+  },
+  "postings": {
+    "format": "1"
+  },
+  "segmeta": {
+    "count": "12",
+    "field_names": [
+      "",
+      "end_date",
+      "name",
+      "email",
+      "active",
+      "country",
+      "start_date",
+      "renew",
+      "prod_name",
+      "signup_date",
+      "uid",
+      "county"
+    ],
+    "format": "1",
+    "name": "seg_2"
+  }
+}

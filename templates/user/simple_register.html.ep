@@ -1,0 +1,27 @@
+% layout 'admin/default';
+% title 'Register';
+
+<h2> Register :</h2>
+    <%= form_for "simple_register_confirm" => (method => "post") => begin %>
+
+    <div class="control-group">
+            <label class="control-label">Email</label>
+        <div class="controls">
+            <input type="text_field" name="email">
+        </div>
+    </div>
+    <div class="control-group">
+            <label class="control-label">Password</label>
+        <div class="controls">
+            <input type="password" name="password">
+        </div>
+    </div>
+    <div class="control-group">
+            <label class="control-label">Retype password</label>
+        <div class="controls">
+            <input type="password" name="password2">
+        </div>
+    </div>
+    
+         <%= submit_button 'Submit', class => "btn btn-primary" %>
+    <% end %>

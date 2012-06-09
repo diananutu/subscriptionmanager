@@ -1,0 +1,32 @@
+% layout 'admin/default';
+% title 'New Subscription';
+
+
+<h2>Here will be the billing section.</h2>
+<div class="page-header"><h3>Future bill details</h3></div>
+You have selected the following product:<br />
+Product name: <%= $name%><br />
+Start date: <%= $start_date->ymd %><br />
+End date: <%= $end_date->ymd %><br />
+Product price:  <%= $total_price %><br />
+% my $final_price = $total_price;
+% if ($remaining_amount) {
+    You have a discount of <%= $remaining_amount %> from your current subscription <br />
+%   $final_price = $final_price - $remaining_amount;    
+    Final price <%= $final_price%>
+% }
+
+
+<div class="span4">
+    
+</div>
+<%= form_for "pay_new_subscription" => (method => "post") => begin %>
+    <%= hidden_field pid => $pid %>
+    <%= hidden_field subscription_action => $subscription_action %>
+    <%= hidden_field start_date => $start_date->ymd %>
+    <%= hidden_field end_date => $end_date->ymd %>
+    <%= hidden_field cust_uid => $cust_uid %>   
+    
+    <input type="submit" name="pay" value="Pay" class="btn btn-primary">
+    %= link_to 'Cancel' => '/user/account_settings'
+<% end %>

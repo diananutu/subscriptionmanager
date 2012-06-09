@@ -1,0 +1,22 @@
+% layout 'admin/default';
+% title 'Register';
+<div class="page-header"><h3>Register</h3></div>
+    <%= form_for "register_form" => (method => "post") => begin %>
+%       my $user_data = $user_config->[0]->{user_data};
+%       foreach my $menu_item ( sort keys %{ $user_data } ){
+        <div class="control-group">
+                        <label class="control-label"><%= $user_data->{$menu_item}->{text} %></label>
+                        <div class="controls">
+            <%= eval(($user_data->{$menu_item}->{value} =~ /password/ ?  'password_field' : 'text_field')." \'".$user_data->{$menu_item}->{value}."\'") %><br />
+                        </div>
+        </div>
+%       }
+    <div class="control-group">
+            <label class="control-label">Retype password</label>
+        <div class="controls">
+            <input type="password" name="password2">
+         </div>
+    </div>
+
+         <%= submit_button 'Submit', class => "btn btn-primary" %>
+    <% end %>

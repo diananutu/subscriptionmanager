@@ -1,0 +1,21 @@
+% layout 'admin/default';
+% title 'Recover password';
+
+<div class="page-header"><h3>Change password</h3></div>
+<%= form_for "recovered_password" => (method => "post") => begin %>
+  <div class="control-group">
+    <label class="control-label">New password</label>
+    <div class="controls">
+      <%= password_field 'new_password' %>
+    </div> 
+  </div>
+  <div class="control-group">
+    <label class="control-label">Repeat new password</label>
+    <div class="controls">
+      <%= password_field 'repeat_new_password' %>
+    </div> 
+  </div>
+    <%= hidden_field uid => $details->uid->uid %>
+    <%= hidden_field hash => $details->sent_url %>
+    <%= submit_button 'Change password', class => "btn btn-inverse" %>
+<% end %>

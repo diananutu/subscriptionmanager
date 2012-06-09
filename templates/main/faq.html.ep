@@ -1,0 +1,119 @@
+% layout 'public/default';
+% title 'FAQ';
+
+  <div class="container">
+    <div class="row">
+      <div class="span8">
+        <div class="well">
+          <div id="collapse" class="accordion">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a href="#collapse1" data-parent="#collapse" data-toggle="collapse" class="accordion-toggle">
+                  <h4>Eum id esse placerat dissentiet?</h4>
+                </a>
+              </div>
+              <div class="accordion-body collapse" id="collapse1" style="height: 0px;">
+                <div class="accordion-inner">
+                  <p>Graeci audire nec ut, et pro quidam suscipiantur, mea ut feugait offendit vituperata. Eum id esse placerat dissentiet! At ubique epicurei pro. Decore urbanitas voluptaria an sea, id has aliquip urbanitas! Illud probatus vel no, cu saperet delenit inimicus quo.</p>
+                  <p>His in justo dicant fastidii, ferri utroque intellegam ea pri? Adhuc officiis te qui, an eum erat augue consulatu? Per eu fabellas menandri definitiones, alienum maluisset complectitur pro an. Cu per possit habemus, eam assentior definitionem no? Ad vel iriure viderer, elitr vocent convenire sed no, minim malorum persecuti ut mea</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a href="#collapse2" data-parent="#collapse" data-toggle="collapse" class="accordion-toggle">
+                  <h4>Ferri utroque intellegam ea pri?</h4>
+                </a>
+              </div>
+              <div class="accordion-body collapse" id="collapse2" style="height: 0px;">
+                <div class="accordion-inner">
+                  <p>Graeci audire nec ut, et pro quidam suscipiantur, mea ut feugait offendit vituperata. Eum id esse placerat dissentiet! At ubique epicurei pro. Decore urbanitas voluptaria an sea, id has aliquip urbanitas! Illud probatus vel no, cu saperet delenit inimicus quo.</p>
+                  <p>His in justo dicant fastidii, ferri utroque intellegam ea pri? Adhuc officiis te qui, an eum erat augue consulatu? Per eu fabellas menandri definitiones, alienum maluisset complectitur pro an. Cu per possit habemus, eam assentior definitionem no? Ad vel iriure viderer, elitr vocent convenire sed no, minim malorum persecuti ut mea</p>
+                  <p>Graeci audire nec ut, et pro quidam suscipiantur, mea ut feugait offendit vituperata. Eum id esse placerat dissentiet! At ubique epicurei pro. Decore urbanitas voluptaria an sea, id has aliquip urbanitas! Illud probatus vel no, cu saperet delenit inimicus quo.</p>
+                  <p>His in justo dicant fastidii, ferri utroque intellegam ea pri? Adhuc officiis te qui, an eum erat augue consulatu? Per eu fabellas menandri definitiones, alienum maluisset complectitur pro an. Cu per possit habemus, eam assentior definitionem no? Ad vel iriure viderer, elitr vocent convenire sed no, minim malorum persecuti ut mea Graeci audire nec ut, et pro quidam suscipiantur, mea ut feugait offendit vituperata. Eum id esse placerat dissentiet! At ubique epicurei pro. Decore urbanitas voluptaria an sea, id has aliquip urbanitas! Illud probatus vel no, cu saperet delenit inimicus quo. His in justo dicant fastidii, ferri utroque intellegam ea pri? Adhuc officiis te qui, an eum erat augue consulatu? Per eu fabellas menandri definitiones, alienum maluisset complectitur pro an. Cu per possit habemus, eam assentior definitionem no? Ad vel iriure viderer, elitr vocent convenire sed no, minim malorum persecuti ut mea</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a href="#collapse3" data-parent="#collapse" data-toggle="collapse" class="accordion-toggle">
+                  <h4>Eum id esse placerat dissentiet?</h4>
+                </a>
+              </div>
+              <div class="accordion-body collapse" id="collapse3" style="height: 0px;">
+                <div class="accordion-inner">
+                  <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a href="#collapse4" data-parent="#collapse" data-toggle="collapse" class="accordion-toggle">
+                  <h4>Turpis suspendisse ut?</h4>
+                </a>
+              </div>
+              <div class="accordion-body collapse" id="collapse4" style="height: 0px;">
+                <div class="accordion-inner">
+                  <p>Lorem ipsum dolor sit amet, ipsum a placeat, erat quisque ligula eu erat, quis semper. Vivamus diam auctor, vestibulum gravida purus vitae elit elementum neque. Aliquam id est diam risus, nisl taciti quasi integer, augue et duis volutpat erat. Eget volutpat dictum, semper curabitur dictum, sit pellentesque sollicitudin. Labore nulla turpis mollis scelerisque pharetra maecenas, dui diam incidunt. Nulla mi nibh dignissim, convallis fusce dolor vivamus, malesuada augue sed dui, nunc justo quis condimentum augue ac ridiculus, pellentesque feugiat sollicitudin non tincidunt. Praesent est et eget magna sed, tempus nec id egestas vestibulum metus, et est quam, vestibulum dis. Turpis suspendisse ut, phasellus odio libero libero donec nulla, sagittis quam a luctus ultricies et, nulla sem et. Quis sed parturient odio purus. Quisque augue, risus odio, bibendum lacus dolor eget interdum. Nulla aliquam dis metus, ac mi fusce dolor, ut a penatibus pellentesque eget, neque amet vulputate. Et sit, arcu nascetur, vestibulum vel curabitur scelerisque eget per, vestibulum venenatis donec nulla malesuada.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a href="#collapse5" data-parent="#collapse" data-toggle="collapse" class="accordion-toggle">
+                  <h4>Massa eget eget fames vitae lectus?</h4>
+                </a>
+              </div>
+              <div class="accordion-body collapse" id="collapse5" style="height: 0px;">
+                <div class="accordion-inner">
+                  <p>Ut scelerisque consequat, eu quis, libero litora amet sociosqu consequat risus, nulla eget vel vel rhoncus. Et sociis nunc morbi, interdum lectus quam urna feugiat nulla ac, cras ac arcu volutpat eros, consectetuer fusce mi. Leo viverra aliquam suspendisse, commodo quisque quisque quisque lacus, donec id ante. Vivamus mauris erat, porta ad quam rutrum mus, vitae reprehenderit pellentesque blandit lobortis, sem ac suscipit erat, fermentum justo. Et est, justo molestie, imperdiet nec justo dictum vitae, ac ullamcorper posuere, hendrerit sed sit. Penatibus quis etiam, eu voluptate condimentum commodo, elementum suscipit mi erat arcu justo quis. Per sit non, pede morbi porta. Etiam suscipit ut cras nulla, vestibulum ultrices odio netus pellentesque, pellentesque nulla, urna varius varius elementum ut, orci quod. Vestibulum ac nulla, et aliquam. Adipiscing quam, sodales dictum sollicitudin.</p>
+                  <p>Sed gravida accumsan, ipsum venenatis, leo libero aliquam nisi nisl at risus. Porta arcu adipiscing ut, turpis semper sed. Donec non curabitur id porta dolor amet, nascetur neque vulputate mollis mauris amet, proin eu porttitor, pellentesque aenean sed proin per blandit. Pretium duis id, in nec tristique dolor gravida. Dignissim a auctor amet mauris maecenas morbi, quis augue ducimus eu augue in lorem, aliquam dui dolor donec vestibulum nullam vestibulum, dui pede erat ac ullamcorper eu.</p>
+                  <p>Sapien arcu vestibulum ultricies orci quam odio, mauris id, curabitur accumsan ipsum eget fermentum vivamus velit. Luctus lacus ridiculus, rutrum non urna nam suscipit lorem. Mi magna tempor quis, in ut porttitor consectetuer, at vitae consectetuer duis, enim sollicitudin. Lacinia turpis praesent. Mollis integer condimentum sapien vulputate, sed suspendisse arcu, nullam nunc. Nisl vel libero.</p>
+                  <p>Non praesent pellentesque, justo lectus massa pellentesque egestas lectus a. Mollis cupidatat lacus, tortor dictum, euismod massa convallis eu quis turpis mauris. Nec sed vulputate aliquam ligula velit, est suspendisse. Elementum aptent semper mauris tellus magna, sed vulputate per ac pede vestibulum, vulputate et, habitasse suspendisse donec maecenas pellentesque suspendisse, ut convallis vel mattis pellentesque nibh. Suspendisse sit urna, sollicitudin vehicula eget erat aenean pellentesque tortor, praesent pulvinar congue sed nisl nulla vitae, nunc ut pharetra pede eu, arcu non orci tortor. Fringilla quisquam neque sodales integer cras, semper erat eget, wisi donec leo, mattis sodales, dolor ac. Amet et blandit, risus placerat nunc urna quam amet non, nullam non tellus, pede a aliquam. Orci lacus quam vulputate nullam quam vestibulum, elit lacus elit. Sollicitudin nec semper dui integer, eleifend et.</p>
+                  <p>Ultricies augue ipsum nullam dolor in, tellus quisque ligula mi, sed ornare pede a. Egestas diam tincidunt vitae et, magna sem vehicula sed luctus, consequat ac nostrum porta amet posuere gravida. Maecenas urna et ac. Arcu molestie nec sit inceptos, quisque lobortis mus cras, a quis, nullam arcu, in ante elit at. Posuere amet turpis mollis lacus, adipiscing metus risus luctus wisi dolore. Dapibus dui, vel ut at a pretium mollis, ridiculus fusce volutpat lorem, id sit nulla tempor. Sodales enim nonummy accumsan amet, et et, nulla per dolor duis, placerat sed nulla vitae, sed porta cras vestibulum curabitur.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a href="#collapse6" data-parent="#collapse" data-toggle="collapse" class="accordion-toggle">
+                  <h4>Sapien arcu vestibulum ultricies orci quam odio, mauris id, curabitur accumsan ipsum eget fermentum vivamus velit?</h4>
+                </a>
+              </div>
+              <div class="accordion-body collapse" id="collapse6" style="height: 0px;">
+                <div class="accordion-inner">
+                  <p>Lorem ipsum dolor sit amet, ipsum a placeat, erat quisque ligula eu erat, quis semper. Vivamus diam auctor, vestibulum gravida purus vitae elit elementum neque. Aliquam id est diam risus, nisl taciti quasi integer, augue et duis volutpat erat. Eget volutpat dictum, semper curabitur dictum, sit pellentesque sollicitudin. Labore nulla turpis mollis scelerisque pharetra maecenas, dui diam incidunt. Nulla mi nibh dignissim, convallis fusce dolor vivamus, malesuada augue sed dui, nunc justo quis condimentum augue ac ridiculus, pellentesque feugiat sollicitudin non tincidunt. Praesent est et eget magna sed, tempus nec id egestas vestibulum metus, et est quam, vestibulum dis. Turpis suspendisse ut, phasellus odio libero libero donec nulla, sagittis quam a luctus ultricies et, nulla sem et. Quis sed parturient odio purus. Quisque augue, risus odio, bibendum lacus dolor eget interdum. Nulla aliquam dis metus, ac mi fusce dolor, ut a penatibus pellentesque eget, neque amet vulputate. Et sit, arcu nascetur, vestibulum vel curabitur scelerisque eget per, vestibulum venenatis donec nulla malesuada.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="well">
+        <h3>Subscribe </h3>
+        <p>
+          <a href="/pricing" class="btn btn-large btn-success">Subscribe now</a>
+          <ul>
+            <li>Dummy text</li>
+            <li>Specimen book</li>
+            <li>Industry's standard</li>
+            <li>Since the 1500s</li>
+          </ul>
+        </p>
+        <h3>Lorem Ipsum</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <h3>Dummy Text</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <h3>Specimen Book</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+      </div>
+    </div>
+  </div>

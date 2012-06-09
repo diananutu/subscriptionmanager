@@ -1,0 +1,46 @@
+% layout 'admin/default';
+% title 'Change Subscription';
+
+% my $action = $subscription_action || 'upgrade';
+
+<div class="page-header"><h3><%= $action %></h3></div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Period</th>
+        </tr> 
+    </thead>
+    <tbody>
+    <!-- There are 3 different objects that can come from controller:
+         Product, ProductUpgrade and ProductDowngrade -->
+      %= form_for "change" => (method => "post") => begin
+      % if ($subscription_action =~ /renew/) {
+      <tr>
+        <td><%= $product->name %></td>
+        <td><%= $product->subscription_cost %></td>
+        <td><%= $product->no_periods . " " . $product->period_type%><%= $product->no_periods eq '1' ? '': 's'%></td>
+        <td><%= radio_button pid =>$product->pid %></td>
+      </tr>
+      % } else {
+        % while (my $prd = $product->next) {
+        % my $detailed_product = ($action eq "upgrade")
+                              %  ? $prd->upgraded_pid
+                              %  : ($action eq "downgrade")
+                              %  ? $prd->downgraded_pid
+                              %  : $prd;
+      <tr>
+        <td><%= $detailed_product->name %></td>
+        <td><%= $detailed_product->subscription_cost %></td>
+        <td><%= $detailed_product->no_periods . " " . $detailed_product->period_type%><%= $detailed_product->no_periods eq '1' ? '': 's'%></td>
+        <td><%= radio_button pid =>$detailed_product->pid %></td>
+      </tr>
+        % }
+      % }
+    </tbody>
+</table>
+    %= hidden_field subscription_action => $subscription_action
+    %= hidden_field cust_uid => $cust_uid
+    %= submit_button 'Subscribe', class => "btn btn-primary"
+    % end

@@ -1,0 +1,35 @@
+user_data:
+  01:
+    text: Name
+    value: name
+  02:
+    text: Photo
+    value: photo
+  03:
+    text: Email address
+    value: email
+  04:
+    text: Address
+    value: address
+  05:
+    text: Phone number
+    value: phone
+  06:
+    text: City
+    value: city
+  07:
+    text: Country
+    value: country
+  08:
+    text: State
+    value: county
+  09:
+    text: Birth date
+    value: birthday
+  10:
+    text: Gender
+    value: gender
+  11:
+    text: Password
+    value: password
+    

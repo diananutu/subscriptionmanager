@@ -1,0 +1,22 @@
+% layout 'admin/default';
+% title 'Products';
+% use utf8;
+
+<div class="page-header"><h3>Product Tools</h3></div>
+<ul class="nav nav-tabs" id="myTab" style="width: 150px; float: left;">
+% my $total_products = 0;
+% my $active='class= active';
+% while (my $prd = $product->next) {
+% $total_products++;
+  <li  <%= $active %> ><a href=<%= "#product_menu_id".$total_products %> ><%= $prd->name %></a></li>
+% $active='' if ($active =~/class/);
+% }
+</ul>
+
+<div class="tab-content">
+% my $tab_class = "tab-pane active";
+% foreach my $product(1..$total_products) {
+  <div class = "<%= $tab_class %>"  id=<%= "product_menu_id".$product %> >No information for product <%= $product %>  yet</div>
+% $tab_class = "tab-pane"  if ($tab_class =~/active/);
+% }
+</div>

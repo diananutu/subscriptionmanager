@@ -1,0 +1,27 @@
+% layout 'admin/default';
+% title 'Edit features';
+
+
+% if ( $feature != 0 ){
+    <div class="control-group">
+    %=form_for 'edit_feature', method => 'post' =>begin
+        <label class="control-label">Feature name:</label> <input type="text" name="feature_name" value="<%= $feature->feature_name %>" >
+        <label class="control-label">Price:</label> <input type="text" name="price" value="<%= $feature->price %>" >
+        </br>
+        <button class="btn btn-primary" type="submit" value="<%= $feature->fid %>" name="fid">Update feature</button>
+    %end
+    </div>
+%}
+%else {
+    %=form_for 'edit_feature', method => 'post' =>begin
+        <label class="control-label">Feature name:</label>
+        %= text_field 'feature_name'
+        <label class="control-label">Price:</label>
+        %= text_field 'price'
+        </br>
+        <button class="btn btn-primary" type="submit">Add feature</button>
+    %end
+%}
+%= form_for 'view_features' => begin
+    <button class="btn btn-primary" type="submit">Cancel</button>
+%end

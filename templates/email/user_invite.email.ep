@@ -1,0 +1,8 @@
+% layout 'email/default';
+% title 'Subscription Invite';
+% my $activation_link = $user->{base_url}. "/sign-up/invite?euid=". $user->{extra_user_id};
+
+    <p>Hello ,<br> you have been invited by <%= $user->{parent_name} %> to access his subscription.</p>
+    <p>Below you can find the comfirmation link<br>
+        <a href= <%= $activation_link %>  > <%= $activation_link %> </a>
+    </p>

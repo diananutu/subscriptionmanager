@@ -1,0 +1,20 @@
+% layout 'admin/default';
+% title 'Edit site template';
+
+<form action="/admin/upload_style" enctype="multipart/form-data" method="post">
+        <input type="file" name="new_style" size="40" value=""></br>
+        <button class="btn btn-primary" type="submit" >Upload</button>
+</form>
+
+%= form_for 'edit_style', method => 'post' => begin
+  % foreach my $key (sort (keys (%{$styles}))) {
+        %if($styles->{$key}->{value} eq $self->config->{style_info} ) {
+                <label class="radio"> <input type="radio" name="style" value="<%= $styles->{$key}->{value} %>" checked > <%= $styles->{$key}->{text}%> <img src="<%=$styles->{$key}->{img} %>" alt="" height="38" width="38"></label><br />
+        %}
+        %else {
+                 <label class="radio"> <input type="radio" name="style" value="<%= $styles->{$key}->{value} %>"> <%= $styles->{$key}->{text}%> <img src="<%=$styles->{$key}->{img} %>" alt="" height="38" width="38"></label><br />
+        %}
+    %}
+    <button class="btn btn-primary" type="submit" >Update Style</button>
+    </ul>
+%end

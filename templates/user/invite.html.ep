@@ -1,0 +1,85 @@
+% layout 'admin/default';
+% title 'Invite users';
+
+
+  <div class="row-fluid">
+    <div class="page-header"><h3>Invite users</h3></div>
+  </div>
+  <div class="row-fluid">
+    <div class="span4">
+    <div class="box">
+      <h4 class="box-header">Choose Emails</h4>
+      <div class="box-container">
+      % if (!$subscription_data->{additional_users}) {
+          <div class="alert alert-info">
+            <p>No invitations available for this subscription.</p>
+          </div>
+      % } elsif (!$subscription_data->{remaining_invites}) {
+          <div class="alert alert-info">
+            <p>No invitations left for this subscription.</p>
+          </div>
+      % } else { 
+      <script type="text/javascript">
+      var max_invites = <%= $subscription_data->{remaining_invites} %>;
+          $(document).ready(function() {
+              $('#add_emails_btn').click(function() {
+                  if (max_invites >1) {
+                      max_invites -= 1;
+                      $('#add_emails').append('<label>Email:</label><div class="controls"><%= text_field "email", placeholder => "email", class => "span12" %></div>');
+                  };
+                  if (max_invites == 1) {
+                      $('#add_emails_btn').remove();
+                  };
+              });
+          }); 
+      </script>
+      %= form_for "invite_validate"  => (method => "post"), class => "well" => begin
+        <fieldset>
+          <div class="control-group" id="add_emails">
+            <label>Email:</label>
+            <div class="controls"><%= text_field "email", placeholder => "email", class => "span12" %></div>
+          </div>
+          %= hidden_field sid => $subscription_data->{sid}
+          % if ($subscription_data->{remaining_invites} > 0) {
+          <div class="form-actions">
+              %= submit_button "Send Invite", class => "btn btn-inverse"
+              %= input_tag "Add more", class => "btn btn-danger", id => "add_emails_btn", type => "button", value => "Add more"
+              %= link_to "Cancel" => '/user/account_settings'
+          </div>
+          % }
+        <fieldset>
+      % end
+      % }
+        </div>
+      </div>
+    </div>
+    <div class="span8">
+      <div class="box">
+        <h4 class="box-header">Subscription Details</h4>
+        <div class="box-container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Start date</th>
+                <th>End date</th>
+                <th>Total additional users</th>
+                <th>Remaining invites</th>
+              </tr> 
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= $subscription_data->{product_name} %></td>
+                <td><%= $subscription_data->{price} %></td>
+                <td><%= $subscription_data->{start_date} %></td>
+                <td><%= $subscription_data->{end_date} %></td>
+                <td><%= $subscription_data->{additional_users} || 0 %></td>
+                <td><%= $subscription_data->{remaining_invites} %></td>
+             </tr>
+           </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

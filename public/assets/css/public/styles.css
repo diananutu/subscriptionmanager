@@ -1,0 +1,254 @@
+/* Webfonts */
+
+@font-face {
+  font-family: 'DroidSansRegular';
+  src: url('/assets/webfonts/DroidSans-webfont.eot');
+  src: url('/assets/webfonts/DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/assets/webfonts/DroidSans-webfont.woff') format('woff'),
+       url('/assets/webfonts/DroidSans-webfont.ttf') format('truetype'),
+       url('/assets/webfonts/DroidSans-webfont.svg#DroidSansRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DroidSansBold';
+  src: url('/assets/webfonts/DroidSans-Bold-webfont.eot');
+  src: url('/assets/webfonts/DroidSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/assets/webfonts/DroidSans-Bold-webfont.woff') format('woff'),
+       url('/assets/webfonts/DroidSans-Bold-webfont.ttf') format('truetype'),
+       url('/assets/webfonts/DroidSans-Bold-webfont.svg#DroidSansBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  color: #222;
+  background: #ddd url("/assets/img/bg.jpg") repeat;
+  font-family: "DroidSansRegular","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+p {
+  margin-bottom: 20px;
+  line-height: 20px;
+}
+
+
+/* Header Styles */
+
+#header {
+  background: #36c6f4;
+  padding: 112px 0 0 0;
+}
+
+#header .header-inner {
+  height: 86px;
+  border-radius: 0 0 5px 5px;
+  background: #ecf2f6;
+  background: -moz-linear-gradient(top,  #ecf2f6 0%, #d7dde0 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ecf2f6), color-stop(100%,#d7dde0));
+  background: -webkit-linear-gradient(top,  #ecf2f6 0%,#d7dde0 100%);
+  background: -o-linear-gradient(top,  #ecf2f6 0%,#d7dde0 100%);
+  background: -ms-linear-gradient(top,  #ecf2f6 0%,#d7dde0 100%);
+  background: linear-gradient(top,  #ecf2f6 0%,#d7dde0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecf2f6', endColorstr='#d7dde0',GradientType=0 );
+  -moz-box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.3);
+}
+
+#header .header-inner .logo {
+  float: left;
+  height: 64px;
+  margin: 16px 24px;
+}
+
+#header .header-inner .top-nav {
+  float: right;
+  clear: right;
+  margin: 24px;
+}
+
+#header .header-inner .top-nav ul {
+  clear:left;
+  float:left;
+  list-style:none;
+  margin:0;
+  padding:0;
+  position:relative;
+  text-align:center;
+}
+
+#header .header-inner .top-nav ul li {
+  float:left;
+  list-style:none;
+  margin:0;
+  padding:0;
+  position:relative;
+  text-align:center;
+  font: normal 16px/120% "DroidSansRegular", Helvetica, Arial, sans-serif;
+}
+
+#header ul li a {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 12px;
+  color:#777777;
+  text-decoration:none;
+}
+
+#header ul li a:hover {
+  color:  #222222;
+}
+
+#header ul li a.header-login {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 20px;
+  color:#fff;
+  text-decoration:none;
+}
+
+#header ul li a:hover.header-login {
+  color:  #f0f0f0;
+}
+
+
+
+/* Subheader Styles */
+
+#subheader {
+  background: #36c6f4;
+}
+
+#subheader h1,
+#subheader h2,
+#subheader h3 {
+  padding: 40px 0 20px 0;
+  color: #fff;
+}
+
+/* Body Styles */
+
+#main {
+  background: #ecf2f6 url("/assets/img/glow_top.jpg") repeat-x;
+  border-top: 4px solid #00bbef;
+  padding: 48px 0 24px 0;
+}
+
+.product {
+  text-align: center;
+}
+
+.product:hover {
+  -webkit-transform: scale(1.05); 
+  -moz-box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -moz-transform: scale(1.05);
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+  background: #fff;
+}
+
+.product.featured {
+  -webkit-transform: scale(1.15); 
+  -moz-box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -moz-transform: scale(1.15);
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  background: #fff;
+  cursor: pointer;
+}
+
+.product-name {
+  background-color: #00bbef;
+  height: 100px;
+  width: 110px;
+  margin:0 auto;
+  
+}
+
+.product-name h3 {
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+}
+
+.product h4 {
+  margin: 0 0 10px 0;
+  color: #f40000;
+}
+
+ul.features li {
+  margin: 18px 10px;
+  padding-bottom: 10px;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+/* Footer Styles */
+.footer-top {
+  height: 38px;
+  border-bottom: 1px solid #eee;
+  background: #ecf2f6 url("/assets/img/glow_bottom.jpg") repeat-x;
+}
+
+.footer {
+  padding: 24px 0;
+}
+
+.footer ul {
+  padding: 12px 0 0 0;
+  list-style: none;
+  list-style-position: outside;
+  margin: 0;
+}
+
+.footer ul li a {
+  color:#777;
+  text-decoration:none;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 0 2px;
+}
+
+.footer ul li a:hover {
+  color:  #222;
+}
+
+.footer .small_logo {
+  background: transparent url("/assets/img/logo_small_grayscale.png") no-repeat center left;
+}
+
+.footer form {
+  padding: 12px 0 0 0;
+}
+
+.footer-copy {
+  clear: both;
+  padding: 12px;
+}
+
+li.facebook { background: transparent url("/assets/img/facebook.png") no-repeat left center; padding-left: 24px; margin-left: -24px; }
+li.linkedin { background: transparent url("/assets/img/linkedin.png") no-repeat left center; padding-left: 24px; margin-left: -24px; }
+li.twitter { background: transparent url("/assets/img/twitter.png") no-repeat left center; padding-left: 24px; margin-left: -24px; }
+li.google-plus { background: transparent url("/assets/img/google-plus.png") no-repeat left center; padding-left: 24px; margin-left: -24px; }

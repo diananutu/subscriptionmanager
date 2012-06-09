@@ -1,0 +1,27 @@
+% layout 'admin/default';
+% title 'Login';
+
+    <div class="row-fluid">
+      <div class="span4"></div>
+      <div class="span4">
+        <div class="box">
+          <h4 class="box-header">Login</h4>
+          <div class="box-container">
+            %= form_for "login_form"  => (method => "post"), class => "well" => begin
+              <fieldset>
+                <div class="control-group">
+                  <label class="control-label">Email:</label>
+                  <div class="controls"><%= text_field 'email', class => "span12", placeholder => "email" %></div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Password: <a href="/login">(forgot password)</a></label>
+                  <div class="controls"><%= password_field 'password', class => "span12", placeholder => "Password" %></div>
+                </div>
+                %= submit_button 'Login', class => "btn btn-inverse"
+                %= link_to 'Cancel' => '/'
+              </fieldset>
+            % end
+          </div>
+        </div>
+      </div>
+    </div>

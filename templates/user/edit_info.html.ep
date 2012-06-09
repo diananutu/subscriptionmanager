@@ -1,0 +1,93 @@
+% layout 'admin/default';
+% title 'Edit information';
+
+<link rel="stylesheet" href="/assets/css/base/jquery.ui.all.css"/>
+<script src="/assets/js/jquery.ui.core.js"></script>
+<script src="/assets/js/jquery.ui.widget.js"></script>
+<script src="/assets/js/jquery.ui.datepicker.js"></script>
+<script type= "text/javascript" src = "/assets/js/countries2.js"></script>
+<script>
+    $(function() { $("#datepicker").datepicker(); });
+</script>
+
+% my $user = $self->session->{user};
+<div class="row-fluid">
+  <div class="page-header">
+    <h3>Edit your profile</h3>
+  </div>
+</div>
+<script type= "text/javascript" src = "/assets/js/countries2.js"></script>
+<div class="row-fluid">
+  <div class="span8">
+    <div class="box">
+      <h4 class="box-header">Edit your profile</h4>
+      <div class="box-container">
+        <div class="control-group">
+          <form action="user_update" enctype="multipart/form-data" method="post" class="form-horizontal well">
+            <fieldset>
+              % my @date = split(/-/, $user->birthday);
+              <div class="control-group">
+                <label class="control-label"><b>Login Info:</b></label>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Email:</label>
+                <div class="controls"><input type="text" name="email" value="<%= $user->email %>"></div>
+              </div>
+              <div class="control-group">
+                <label class="control-label"><b>Personal Info:</b></label>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Name:</label>
+                <div class="controls"><input type="text" name="name" value="<%= $user->name %>"></div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Birthday:</label>
+                <div class="controls"><input data-datepicker="datepicker" size="16" type="data" name="birthday" value="<%= $date[1] %>/<%= $date[2] %>/<%= $date[0] %>" ></div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Gender:</label>
+                <div class="controls">
+                  <select name="gender">
+                    <option>Do not disclose</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label"><b>Contact Info:</b></label>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Address:</label>
+                <div class="controls"><input type="text" name="address" value="<%= $user->address %>"></div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Phone:</label>
+                <div class="controls"><input type="text" name="phone" value="<%= $user->phone %>"></div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">City:</label>
+                <div class="controls"><input type="text" name="city" value="<%= $user->city %>"></div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Country:</label>
+                <div class="controls"><select onchange="print_state('state',this.selectedIndex);" id="country" name ="country"></select></div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">State:</label>
+                <div class="controls">
+                    <select name ="county" id = "state"></select>
+                    <script language="javascript">print_country("country");</script>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit" value="<%= $user->uid %>" name="uid">Save</button>
+                %= link_to 'Cancel' => '/user/account_settings'
+              </div>
+              </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

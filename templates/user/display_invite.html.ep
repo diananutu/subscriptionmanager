@@ -1,0 +1,33 @@
+% layout 'public/default';
+% title 'Activate account';
+
+
+<legend>Activate account</legend>
+
+<%= form_for "activate_invite" => (method => "post") => begin %>
+
+    <div class="control-group">
+        <label class="control-label">Email Address</label>
+        <div class="controls">
+            <%= text_field 'email', value => $register_data->{email}, readonly => "readonly" %>
+        </div> 
+    </div>
+% if (!$register_data->{password}) {
+    <div class="control-group">
+        <label class="control-label">Password</label>
+        <div class="controls">
+            <%= password_field 'password'%>
+        </div> 
+    </div>
+    
+    <div class="control-group">
+        <label class="control-label">Repeat password</label>
+        <div class="controls">
+            <%= password_field 'password2'%>
+        </div> 
+    </div>
+% }
+    <%= hidden_field euid => $register_data->{euid} %>
+    <%= submit_button 'Confirm', class => "btn btn-primary" %>
+
+<% end %>

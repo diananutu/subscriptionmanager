@@ -1,0 +1,54 @@
+---
+app_menu:
+  admin:
+    001_slide:
+      submenu: ~
+      text: 'User Management'
+      value: '/admin/user_management'
+    002_grid:
+      submenu:
+        01:
+          text: 'Products Management'
+          value: '/admin/product_management'
+        02:
+          text: 'Detail features'
+          value: '/admin/view_features'
+      text: 'Subscriptions'
+      value: '#'
+    003_admin_menu:
+      submenu:
+        01:
+          text: Styles
+          value: '/admin/view_styles'
+        02:
+          text: 'Registration options'
+          value: '/admin/view_options'
+      text: 'Admin Menu'
+      value: '#'
+  anonymous: ~
+  regular: ~
+database:
+  dsn: dbi:mysql:subscription
+  password:
+  user: root
+uploads_dir: '/uploads/'
+email:
+  from: "\"Raul Matei\" <raul.matei@evozon.com>"
+memcached:
+  server: 192.168.2.155:11211
+style_bootstrap: '/assets/css/bootstrap.css'
+style_bootstrap_overides: '/assets/css/bootstrap-overides.css'
+style_public: '/assets/css/public/styles.css'
+style_admin: '/assets/css/admin/styles.css'
+style_responsive: '/assets/css/bootstrap-responsive.css'
+currency:
+  USD: '$'
+  EURO: '€'
+  GBP: '£'
+user_data:
+  10:
+    text: Password
+    value: password
+  3:
+    text: 'Email address'
+    value: email

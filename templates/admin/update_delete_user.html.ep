@@ -1,0 +1,122 @@
+% layout 'admin/default';
+
+    <script type= "text/javascript" src = "/assets/js/countries2.js"></script>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="box">
+          <h4 class="box-header">Edit user</h4>
+          <div class="box-container">
+            % if ($user !=0 ) {
+            % title 'Update User';
+            <div class="control-group">
+              <form action="/admin/update_delete_user" enctype="multipart/form-data" method="post" class="form-horizontal well">
+                <fieldset>
+                  % my @date = split(/-/, $user->birthday);
+                  <div class="control-group">
+                    <label class="control-label"><b>Login Info:</b></label>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Email:</label>
+                    <div class="controls"><input type="text" name="email" value="<%= $user->email %>"></div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Password:</label>
+                    <div class="controls"><input type="password" name="password" value="<%= $user->password %>" ></div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label"><b>Personal Info:</b></label>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Name:</label>
+                    <div class="controls"><input type="text" name="name" value="<%= $user->name %>"></div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Photo:</label>
+                    <div class="controls"><input type="file" name="photo" size="40" value="<%= $user->photo %>"></div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Birthday:</label>
+                    <div class="controls"><input class="span2" size="16" type="data" name="birthday" data-datepicker="datepicker" value="<%= $date[1] %>/<%= $date[2] %>/<%= $date[0] %>" ></div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Gender:</label>
+                    <div class="controls">
+                      <select name="gender">
+                        <option>Do not disclose</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label"><b>Contact Info:</b></label>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Address:</label>
+                    <div class="controls"><input type="text" name="address" value="<%= $user->address %>"></div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Phone:</label>
+                    <div class="controls"><input type="text" name="phone" value="<%= $user->phone %>"></div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">City:</label>
+                    <div class="controls"><input type="text" name="city" value="<%= $user->city %>" ></div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Country:</label>
+                    <div class="controls"><select onchange="print_state('state',this.selectedIndex);" id="country" name ="country"></select></div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">State:</label>
+                    <div class="controls">
+                        <select name ="county" id = "state"></select>
+                        <script language="javascript">print_country("country");</script>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" type="submit" value="<%= $user->uid %>" name="uid">Update user</button>
+                  %= link_to 'Cancel' => '/admin/user_management'
+                  </fieldset>
+              </form>
+            </div>
+            % } else {
+            % title 'Add User';
+            <form action="/admin/update_delete_user" enctype="multipart/form-data" method="post" class="well">
+              <label class="control-label"><b>Login Info:</b></label>
+                <label class="control-label">Email:</label>
+                <input type="email" placeholder="me@example.com" name='email'>
+                <label class="control-label">Password:</label>
+                %= password_field 'password'
+              <label class="control-label"><b>Personal Info:</b></label>
+              <label class="control-label">Name:</label>
+              %= text_field 'name'
+               <label class="control-label">Photo:</label>
+               <input type="file" name="photo" size="40" value=""></br>
+              <label class="control-label">Birthday:</label>
+              <input class="span2" data-datepicker="datepicker" size="16" type="data" name="birthday"> 
+              <label class="control-label">Gender:</label>
+              <select name="gender">
+                  <option>Do not disclose</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              <label class="control-label"><b>Contact Info:</b></label>
+              <label class="control-label">Address:</label>
+              %= text_field 'address'
+              <label class="control-label">Phone:</label>
+              %= text_field 'phone'
+              <label class="control-label">City:</label>
+              %= text_field 'city'
+              <label class="control-label">Country:</label>
+              <select onchange="print_state('state',this.selectedIndex);" id="country" name = "country"></select> <br />
+              <label class="control-label">State:</label>
+              <select name ="county" id = "state"></select>
+               <script language="javascript">print_country("country");</script>
+                <button class="btn btn-primary" type="submit" >Add user</button>
+                %= link_to 'Cancel' => '/admin/user_management'
+            </form>
+            % }
+          </div>
+        </div>
+      </div>
+    </div>

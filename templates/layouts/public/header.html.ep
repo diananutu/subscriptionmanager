@@ -1,0 +1,79 @@
+    <div id="header">
+      <div class="navbar-fixed-top container">
+        <div class="header-inner">
+          <div class="logo"><a href="/"><img src="/assets/img/logo.png"></a></div>
+          <div class="top-nav">
+            <ul>
+              <li><a href="/why-us">Why Us?</a></li>
+              <li><a href="/how-it-works">How it Works</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <% if ( defined $self->session->{user} ) { %>
+              <li><a href="/logout">Logout</a></li>
+              <li><a href="/user/menu" class="btn btn-info btn-large header-login">My Account</a></li>
+              <% } else { %>
+              <li><a href="/pricing">Pricing &amp; Sign Up</a></li>
+              <li><a data-toggle="modal" href="#login-window" class="btn btn-info btn-large header-login">Login</a></li>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="subheader">
+        <div class="container">
+          % if ($self->req->url eq '/') {
+          <div id="myCarousel" class="carousel">
+            <div class="carousel-inner">
+              <div class="active item">
+                <div class="carousel-content">
+                  <h2>Ready to slide</h2>
+                  <h4>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</h4>
+                  <a class="btn btn-success btn-large" href="#">Start now!</a>
+                </div>
+                <img src="/assets/img/img_00.png" style="margin:0 auto;">
+              </div>
+              <div class="item">
+                <div class="carousel-content">
+                  <h2>Full control</h2>
+                  <h4>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</h4>
+                  <a class="btn btn-success btn-large" href="#">Start now!</a>
+                </div>
+                <img src="/assets/img/img_01.png" style="margin:0 auto;">
+              </div>
+              <div class="item">
+                <div class="carousel-content">
+                  <h2>Single stroke</h2>
+                  <h4>The bedding was hardly able to cover it and seemed ready to slide off any moment.</h4>
+                  <a class="btn btn-success btn-large" href="#">Start now!</a>
+                </div>
+                <img src="/assets/img/img_02.png" style="margin:0 auto;">
+              </div>
+              <div class="item">
+                <div class="carousel-content">
+                  <h2>Hear the buzz</h2>
+                  <h4>I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</h4>
+                  <a class="btn btn-success btn-large" href="#">Start now!</a>
+                </div>
+                <img src="/assets/img/img_03.png" style="margin:0 auto;">
+              </div>
+              <div class="item">
+                <div class="carousel-content">
+                  <h2>Able to cover</h2>
+                  <h4>The bedding was hardly able to cover it and seemed ready to slide off any moment.</h4>
+                  <a class="btn btn-success btn-large" href="#">Start now!</a>
+                </div>
+                <img src="/assets/img/img_04.png" style="margin:0 auto;">
+              </div>
+            </div>
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+          </div>
+           % } else {
+            <div class="container">
+              <div class="span12">
+                <h2><%= $title %></h2>
+              </div>
+            </div>
+          % }
+        </div>
+      </div>
+    </div>

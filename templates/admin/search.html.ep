@@ -1,0 +1,50 @@
+% layout 'admin/default';
+% title 'Search Results';
+
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="box">
+          <h4 class="box-header">Search Results</h4>
+          <div class="box-container">
+            <table class="table table-bordered" border="0">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Country</th>
+                  <th>State</th>
+                  <th>Current subscription</th>
+                  <th>Starting Date</th>
+                  <th>End Date</th>
+                  <th>Auto Renew</th>
+                  <th>Options</th>
+                </tr>
+              </thead>
+              <tbody>
+              % foreach my $hit ( @$hits ) {
+                %= form_for 'update_delete_user', method => 'post' => begin
+                  <tr>
+                    <td><%= $hit->{uid} %></td>
+                    <td><%= $hit->{name} %></td>
+                    <td><%= $hit->{email} %></td>
+                    <td><%= $hit->{country} %></td>
+                    <td><%= $hit->{state} %></td>
+                    <td><%= $hit->{sub} %></td>
+                    <td><%= $hit->{s_date} %></td>
+                    <td><%= $hit->{e_date} %></td>
+                    <td><%= $hit->{renew} %></td>
+                    <td>
+                      <button class="btn btn-info" type="submit" value="<%=$hit->{uid}%>" name="update">Edit</button>
+                      <a href="/admin/user_details?uid=<%=$hit->{uid}%>" >Details</a>
+                    </td>
+                  </tr>
+                % end 
+              % }
+              </tbody>
+            </table>
+            <a href="/admin/user_management" class="btn btn-primary">Back</a>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,16 @@
+% layout 'public/default';
+% title 'Send activation email';
+
+
+<pre>
+                This account was not activated. Please activate it with the link from
+                the previously sent email, or request another activation email
+</pre>
+
+
+    %= form_for "resend_activation_mail"  => (method => "post") => begin
+        %= hidden_field action => 'process_request'
+        %= hidden_field uid => $uid
+        %= submit_button 'Send Activation Link',  class => "btn btn-inverse"
+    % end
+

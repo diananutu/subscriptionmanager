@@ -1,0 +1,22 @@
+% layout 'admin/default';
+% title 'User product';
+
+<div class="page-header"><h3>My subscription history</h3></div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Start date</th>
+            <th>End date</th>
+        </tr> 
+    </thead>
+    <tbody>
+%   while (my $sb = $subscription->next) {
+        <tr>
+            <td><%= $sb->pid->name %></td>
+            <td><%= substr($sb->start_date, 0, 10) %></td>
+            <td><%= substr($sb->end_date, 0, 10) %></td>
+        </tr>
+%  }
+    </tbody>
+</table>

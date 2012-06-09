@@ -1,0 +1,7 @@
+% layout 'email/default';
+% title 'Product Subscription Upgrade';
+
+    <p>
+        Hello <%= $user->{name} %>, you have upgraded to [GET PRODUCT FROM DB]<%#= $product %> successfully.<br>
+        Your subscription for the new product will end at [GET END DATE FROM DB]<%#= $end_date %>.
+    </p>

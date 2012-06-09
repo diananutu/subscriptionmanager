@@ -1,0 +1,38 @@
+% layout 'admin/default';
+% title 'New Subscription';
+
+% my $action = $subscription_action || 'upgrade';
+<div class="page-header"><h3>Subscribe</h3></div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Period</th>
+    </tr>
+  </thead>
+  <tbody>
+  %= form_for "subscribe" => (method => "post") => begin
+  % while (my $prd = $product->next) {
+    <tr>
+      <td>
+        %= $prd->name
+      </td>
+      <td>
+        %= $prd->subscription_cost
+      </td>
+      <td>
+        %= $prd->no_periods . " " . $prd->period_type
+        %= $prd->no_periods eq '1' ? '': 's'
+      </td>
+      <td>
+        %= radio_button pid => $prd->pid
+      </td>
+    </tr>
+  % }
+  </tbody>
+</table>
+%= hidden_field subscription_action => $subscription_action
+%= submit_button 'Subscribe', class => "btn btn-primary"
+%= link_to 'Cancel' => '/user/account_settings'
+% end
